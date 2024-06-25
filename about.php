@@ -127,9 +127,9 @@ $count = $count[0]['count(*)'];
                 <div class="banner">
                     <div class="f-text">
                         <h1>
-                            FASHION
+                            MAKE
                             <br />
-                            <span>MADE</span>
+                            <span>FURNITURE</span>
                             <br />
                             SIMPLE.
                         </h1>
@@ -140,7 +140,7 @@ $count = $count[0]['count(*)'];
             <div class="main-right">
                 <div class="about-info">
                     <h2>About Us</h2>
-                    <p>Fashion wear is a online shopping platform.It will soon be available to the public in a comming days.There will be different kind of clothes for ladies.No exchange after sold.</p>
+                    <p>Fashion wear is a online furniture shopping platform.It will soon be available to the public in a comming days.There will be different kind of furnitures like chair, table, bed, etc in the future. No exchange after sold.</p>
                 </div>
             </div>
         </div>

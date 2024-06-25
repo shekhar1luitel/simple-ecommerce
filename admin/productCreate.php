@@ -41,12 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadOk = 0;
         }
 
-        // Check file size
-        if ($_FILES['image']['size'] > 500000) {
-            $_SESSION['error'] = "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
-
         // Allow certain file formats
         $allowedFormats = ['jpg', 'jpeg', 'png', 'gif'];
         if (!in_array($imageFileType, $allowedFormats)) {

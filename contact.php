@@ -124,9 +124,9 @@ $count = $count[0]['count(*)'];
                 <div class="banner">
                     <div class="f-text">
                         <h1>
-                            FASHION
+                            MAKE
                             <br />
-                            <span>MADE</span>
+                            <span>FURNITURE</span>
                             <br />
                             SIMPLE.
                         </h1>
@@ -141,15 +141,15 @@ $count = $count[0]['count(*)'];
                 <div class="contact-details">
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Kathmandu, Lalitpur</p>
+                        <p>Morang, Biratnagar</p>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <p>hirashrestha886@gmail.com</p>
+                        <p>info.furniture.com@gmail.com</p>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-phone-alt"></i>
-                        <p>9845208597</p>
+                        <p>98898966</p>
                     </div>
                 </div>
                 <div class="contact-form">

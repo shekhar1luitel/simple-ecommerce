@@ -53,9 +53,9 @@ $count = $count[0]['count(*)'];
                 <div class="banner">
                     <div class="f-text">
                         <h1>
-                            FASHION
+                            MAKE
                             <br />
-                            <span>MADE</span>
+                            <span>FURNITURE</span>
                             <br />
                             SIMPLE.
                         </h1>

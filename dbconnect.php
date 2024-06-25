@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$database = "sem";
+$database = "sem_fun";
 $username = "root";
 $password = "";
 $connection;
