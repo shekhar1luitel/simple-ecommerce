@@ -17,7 +17,7 @@ $sql = "select count(*) from cart_items where user_id = $user_id";
 $count = sql($sql);
 $count = $count[0]['count(*)'];
 // var_dump($product);
-// output : array(6) { ["id"]=> int(1) ["title"]=> string(9) "Product 1" ["description"]=> string(13) "Description 1" ["image"]=> string(11) "clothes.jpg" ["price"]=> string(5) "19.99" ["user_id"]=> int(1) }
+// output : array(6) { ["id"]=> int(1) ["title"]=> string(9) "Product 1" ["description"]=> string(13) "Description 1" ["image"]=> string(11) "furniture.jpg" ["price"]=> string(5) "19.99" ["user_id"]=> int(1) }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,8 +132,8 @@ $count = $count[0]['count(*)'];
             <ul class="list-items">
                 <li><a href="/dashboard.php" class="link">HOME</a></li>
                 <li><a href="collection.php" class="link">COLLECTION</a></li>
-                <li><a href="#" class="link">CONTACT US</a></li>
-                <li><a href="#" class="link">ABOUT US</a></li>
+                <li><a href="./contact.php" class="link">CONTACT US</a></li>
+                <li><a href="./about.php" class="link">ABOUT US</a></li>
             </ul>
 
             <div class="nav-btns">

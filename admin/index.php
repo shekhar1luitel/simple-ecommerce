@@ -63,7 +63,7 @@ if($userDetails['role'] != 'admin'){
                 </div>
             </div>
             <div class="main-right">
-                <img src="../clothes.jpg" />
+                <img src="../furniture.jpg" />
             </div>
         </div>
     </header>

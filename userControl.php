@@ -11,11 +11,10 @@ require('dbconnect.php');
 
 $user_id = $_SESSION['user_id'];
 $user = readUserById($user_id);
-
+  
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the 'update' button is clicked
     if (isset($_POST['update'])) {
-
         handleUpdateProfile($user_id);
     }
     // Check if the 'delete' button is clicked
@@ -39,7 +38,8 @@ function handleUpdateProfile($user_id)
             $data = ['email' => $newEmail];
 
             if (!empty($newPassword)) {
-                $data['password'] = $newPassword;
+                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); // Hash the new password
+                $data['password'] = $hashedPassword;
             }
 
             $condition = "WHERE id = $user_id";
@@ -49,18 +49,19 @@ function handleUpdateProfile($user_id)
                 exit();
             } else {
                 $error = "Failed to update profile. Please try again.";
-                $_SESSION['message'] = $error ;
+                $_SESSION['message'] = $error;
                 header('Location: /user.php');
                 exit();
             }
         } else {
             $error = "Email already exists. Please try again with a different email.";
-            $_SESSION['message'] = "'" . $error . "'";
+            $_SESSION['message'] = $error;
             header('Location: /user.php');
             exit();
         }
     } elseif (!empty($newPassword)) {
-        $data = ['password' => $newPassword];
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); // Hash the new password
+        $data = ['password' => $hashedPassword];
         $condition = "WHERE id = $user_id";
 
         if (update('users', $data, $condition)) {
@@ -74,11 +75,10 @@ function handleUpdateProfile($user_id)
         }
     }
     $error = "Failed to update profile. Please try again.";
-    $_SESSION['message'] =  $error ;
+    $_SESSION['message'] = $error;
     header('Location: /user.php');
     exit();
 }
-
 
 function handleDeleteAccount()
 {
@@ -91,7 +91,7 @@ function handleDeleteAccount()
         exit();
     } else {
         $error = "Failed to delete account. Please try again.";
-        $_SESSION['message'] =  $error ;
+        $_SESSION['message'] = $error;
         header('Location: /user.php');
         exit();
     }

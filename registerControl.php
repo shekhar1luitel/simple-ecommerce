@@ -1,34 +1,42 @@
 <?php
 require('dbconnect.php');
 session_start();
-if (isset($_POST['email']) and isset($_POST['password'])) {
+if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $condition = "where email = '" . $email . "'";
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $contact = $_POST['contact'];
+    $gender = $_POST['gender'];
+    $condition = "WHERE email = '" . $email . "'";
     $userData = readAll('users', $condition);
 
-    if (empty($userData)) { // email uniqe xa ki nai
-        // print_r( $userData);
+    if (empty($userData)) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+
         $data = [
             'email' => $email,
-            'password' => $password,
+            'password' => $hashedPassword, // Store the hashed password
+            'name' => $name,
+            'age' => $age,
+            'contact' => $contact,
+            'gender' => $gender,
         ];
         $createUser = create('users', $data);
 
         if ($createUser) {
-            $condition = "where email = '".$email."'";
+            $condition = "WHERE email = '".$email."'";
             $loginUser = read('users', $condition);
             $_SESSION['user_id'] = $loginUser['id'];
             header('Location: dashboard.php');
             exit();
         } else {
-            $_SESSION['message'] = 'Register Failed ';
+            $_SESSION['message'] = 'Register Failed';
             header('Location: register.php');
             exit();
         }
     } else {
-        $_SESSION['message'] = 'Enter Valid Email';
-        echo $_SESSION['message'];
+        $_SESSION['message'] = 'Email already exists';
         header('Location: register.php');
         exit();
     }

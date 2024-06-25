@@ -91,8 +91,8 @@ $count = $count[0]['count(*)'];
             <ul class="list-items">
                 <li><a href="/dashboard.php" class="link">HOME</a></li>
                 <li><a href="collection.php" class="link">COLLECTION</a></li>
-                <li><a href="#" class="link">CONTACT US</a></li>
-                <li><a href="#" class="link">ABOUT US</a></li>
+                <li><a href="./contact.php" class="link">CONTACT US</a></li>
+                <li><a href="./about.php" class="link">ABOUT US</a></li>
             </ul>
 
             <div class="nav-btns">
@@ -144,7 +144,7 @@ $count = $count[0]['count(*)'];
         <hr>
         <div class="row">
             <?php foreach ($cartProduct as $data) : ?>
-                <?php if ($data['status'] === 'ordered') : ?>
+                <?php if ($data['status'] === 'ordered' || $data['status'] === 'delivering' ) : ?>
                     <div class="product">
 
                         <h2><?= $data['title'] ?></h2>
@@ -156,10 +156,15 @@ $count = $count[0]['count(*)'];
                         <a href="/product.php?product=<?= $data['product_id'] ?>">
                             <button><i class="fas fa-eye"></i> View</button>
                         </a>
+                        <?php if($data['status'] === 'delivering' ){?>
+                            <button><i class="fas fa-cart-plus"></i> Delivering</button>
+                            
+                        <?php }else{?>
                         <form action="update_cart.php" method="post">
                             <input type="hidden" name="cart_item" value="<?= $data['id'] ?>">
                             <button type="submit" name="remove_item"><i class="fas fa-trash"></i> Remove</button>
                         </form>
+                        <?php } ?>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>

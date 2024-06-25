@@ -44,6 +44,21 @@ if (isset($_SESSION['user_id'])) {
             border-radius: 4px;
         }
 
+        .login-form select {
+            width: 98.7%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form option {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
         .login-form button {
             background-color: #253346;
             color: #fff;
@@ -56,6 +71,7 @@ if (isset($_SESSION['user_id'])) {
         .login-form button:hover {
             background-color: #132432;
         }
+        
 
         .login-form p {
             font-size: 14px;
@@ -93,7 +109,15 @@ if (isset($_SESSION['user_id'])) {
                 unset($_SESSION['message']);
             }
             ?>
+            <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="age" placeholder="Age" required>
+            <input type="text" name="contact" placeholder="Contact" required>
+            <select name="gender" id="">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Register</button>
             <div class="mt-2">

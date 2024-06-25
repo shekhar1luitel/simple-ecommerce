@@ -22,6 +22,80 @@ $count = $count[0]['count(*)'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Fashion</title>
+    <style>
+        .contact-info h2,
+.contact-form h2,
+.about-info h2 {
+    margin-top: 50px;
+    color: pink;
+}
+
+.contact-info p,
+.about-info p {
+    color: #666;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-detail i {
+    margin-right: 10px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-btns {
+        display: none;
+    }
+    .list-items {
+        display: none;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .main-left,
+    .main-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
 </head>
 
 <body>
@@ -60,15 +134,17 @@ $count = $count[0]['count(*)'];
                             SIMPLE.
                         </h1>
                     </div>
-                    <a href="./collection.php" class="btn">SHOP NOW</a>
+                    <a href="#" class="btn">SHOP NOW</a>
                 </div>
             </div>
             <div class="main-right">
-                <img src="furniture.jpg" />
+                <div class="about-info">
+                    <h2>About Us</h2>
+                    <p>Fashion wear is a online shopping platform.It will soon be available to the public in a comming days.There will be different kind of clothes for ladies.No exchange after sold.</p>
+                </div>
             </div>
         </div>
     </header>
 </body>
-
 
 </html>

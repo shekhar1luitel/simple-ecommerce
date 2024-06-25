@@ -119,8 +119,8 @@ $userDetails = readUserById($user_id);
             <ul class="list-items">
                 <li><a href="/dashboard.php" class="link">HOME</a></li>
                 <li><a href="collection.php" class="link">COLLECTION</a></li>
-                <li><a href="#" class="link">CONTACT US</a></li>
-                <li><a href="#" class="link">ABOUT US</a></li>
+                <li><a href="./contact.php" class="link">CONTACT US</a></li>
+                <li><a href="./about.php" class="link">ABOUT US</a></li>
 
             </ul>
 

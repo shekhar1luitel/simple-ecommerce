@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $database = "sem";
-$username = "shekhar";
-$password = "password";
+$username = "root";
+$password = "";
 $connection;
 
 try {
