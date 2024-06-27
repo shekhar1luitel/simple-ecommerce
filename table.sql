@@ -1,12 +1,15 @@
-CREATE TABLE
-  `users` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `email` varchar(255) NOT NULL,
-    `password` varchar(255) NOT NULL,
-    `role` enum('user', 'admin') DEFAULT 'user',
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `email` (`email`)
-  )
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `age` int(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('user','admin') DEFAULT 'user',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) 
 
   CREATE TABLE
   `products` (
